@@ -35,5 +35,4 @@ def assert_in_range(s: pd.Series, lo=None, hi=None, name: str = "value") -> None
 
 
 
-orders = pd.read_parquet("data/processed/orders.parquet")
-require_columns(orders, ["order_id","user_id","NOT_A_COL"])
+

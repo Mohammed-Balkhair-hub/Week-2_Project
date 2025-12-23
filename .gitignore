@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.Python
+.venv/
+
+
+# Tooling caches
+.pytest_cache/
+
+
+
+
+# Data and reports
+data/processed/
+data/cache/
+reports/

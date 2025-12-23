@@ -48,5 +48,7 @@ def apply_mapping(s: pd.Series, mapping: dict[str, str]) -> pd.Series:
 
 
 def dedupe_keep_latest(df: pd.DataFrame, key_cols: list[str], ts_col: str) -> pd.DataFrame:
-    df=df.sort_values(by=[ts_col])
-    df=df.drop_duplicates( keep='first')
+    df=df.sort_values(by=[ts_col],ascending=False)
+    df=df.drop_duplicates( keep='first',ignore_index=True)
+    return df
+
