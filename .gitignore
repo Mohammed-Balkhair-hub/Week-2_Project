@@ -5,8 +5,9 @@ __pycache__/
 .venv/
 
 
-# Tooling caches
+#  caches
 .pytest_cache/
+scripts/__pycache__/
 
 
 
@@ -15,3 +16,6 @@ __pycache__/
 data/processed/
 data/cache/
 reports/
+.python-version
+uv.lock
+main.py
