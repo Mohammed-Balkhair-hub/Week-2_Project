@@ -6,12 +6,12 @@ from pathlib import Path
 
 @dataclass(frozen=True)
 class Paths:
-    """Group all important data directories under a single object."""
+    """data paths object ."""
 
     root: Path      # project root directory
     raw: Path       # raw input data
-    cache: Path     # cached intermediate data
-    processed: Path # cleaned / processed data
+    cache: Path     # cached data
+    processed: Path # cleaned & processed data
     external: Path  # any external / reference data
 
 

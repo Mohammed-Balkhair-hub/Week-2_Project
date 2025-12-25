@@ -11,7 +11,7 @@ git clone https://github.com/Mohammed-Balkhair-hub/Week-2_Project.git
 cd Week-2_Project
 ```
 
-Install `uv` from https://docs.astral.sh/uv/. Python 3.12 is required (see `.python-version`).
+Install `uv` from https://docs.astral.sh/uv/.
 
 From the project root, install dependencies:
 

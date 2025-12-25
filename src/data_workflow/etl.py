@@ -35,11 +35,11 @@ def transform(orders_raw, users):
     orders_clean = parse_datetime(orders_clean, "created_at")
     orders_clean = add_time_parts(orders_clean, "created_at")
     
-    users['user_id'] = users["user_id"].astype("string")
+    users['user_id'] = users["user_id"].astype("string") 
     assert_unique_key(users, "user_id")
     
     orders_clean['user_id'] = orders_clean['user_id'].astype("string")
-    users['user_id'] = users['user_id'].astype("string")
+    users['user_id'] = users['user_id'].astype("string")# i need to unified the types of user id becuase it will cause error  if i want to merge tables
     joined = safe_left_join(orders_clean, users, on="user_id", validate="many_to_one")
     assert len(joined) == len(orders_clean)
     
