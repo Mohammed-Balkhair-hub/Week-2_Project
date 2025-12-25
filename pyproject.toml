@@ -6,7 +6,11 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "httpx>=0.28.1",
+    "ipykernel>=7.1.0",
+    "kaleido>=1.2.0",
+    "nbformat>=4.2.0",
     "pandas>=2.3.3",
+    "plotly>=6.5.0",
     "pyarrow>=22.0.0",
     "pytest>=9.0.2",
 ]

@@ -2,15 +2,15 @@ import sys
 from pathlib import Path
 
 
-# Make `src/` importable when running as a script
+# init paths of the project
 ROOT = Path(__file__).resolve().parents[1]# init root path as the parent if this path dir
 SRC = ROOT / "src" 
 sys.path.insert(0, str(SRC))# move python env path to my package
 
 
 from data_workflow.config import make_paths
-from data_workflow.io import  read_orders_csv,read_users_csv,write_parquet,write_csv,read_parquet
-from data_workflow.transformers import enforce_schema,missingness_report,normalize_text,add_missing_flags,parse_datetime,add_time_parts,iqr_bounds,winsorize,add_outlier_flag
+from data_workflow.io import write_parquet, read_parquet
+from data_workflow.transformers import enforce_schema, parse_datetime, add_time_parts, winsorize, add_outlier_flag
 from data_workflow.quality import require_columns,assert_non_empty,assert_unique_key
 from data_workflow.joins import safe_left_join
 import logging
@@ -30,8 +30,10 @@ def main() -> None:
 
     # 1-Loads orders_clean.parquet and users.parquet
     log.info("###########################  Start loading orders and users Data  ###########################")# flag of starting the process of task 1
-    orders=read_parquet(path.processed/"orders_cleaned.parquet")# read the parquet file for orders
+    orders=read_parquet(path.processed/"orders_clean.parquet")# read the parquet file for orders
+    assert_non_empty(orders, "orders data")
     users=read_parquet(path.processed/"users.parquet")# read the parquet file for users
+    assert_non_empty(users, "users data")
     log.info("data loaded ... Done\n")# flag of finishing the process of task 1
 
 
@@ -64,6 +66,7 @@ def main() -> None:
 
     log.info("merging Data frames ... ")# flag of starting the process of task 4
     #4- Joins orders → users (validate="many_to_one")
+    users['user_id'] = users['user_id'].astype("string")
     df_merged=safe_left_join(orders,users,on="user_id",validate="many_to_one",)# it will do left join so the left table will preserve all it's rows 
     assert len(df_merged) == len(orders) # check row count changed  to detect join explosion
 

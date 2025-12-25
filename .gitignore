@@ -1,21 +1,16 @@
 .DS_Store
 __pycache__/
 *.py[cod]
-.Python
 .venv/
 
-
-#  caches
+# caches
 .pytest_cache/
-scripts/__pycache__/
 
-
-
-
-# Data and reports
+# Data 
 data/processed/
 data/cache/
-reports/
+reports/figures/
+reports/missingness_orders.csv
 .python-version
 uv.lock
 main.py
