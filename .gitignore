@@ -9,7 +9,8 @@ __pycache__/
 # Data 
 data/processed/
 data/cache/
-reports/missingness_orders.csv
+# cause i want figures to be in the repo for summary.md 
+reports/missingness_orders.csv 
 .python-version
 uv.lock
 main.py
