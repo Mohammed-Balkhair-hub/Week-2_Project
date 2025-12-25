@@ -76,7 +76,7 @@ def write_run_meta(path, analytics):
 
 
 def run_etl(root):
-    path=make_paths(root)
+    path=make_paths(root) # no need to creat new class above i just imported class we already built in config.py
     orders_raw, users=load_inputs(path)
     orders, orders_clean, analytics=transform(orders_raw, users)
     load_outputs(orders, orders_clean, analytics, users, path, root)
