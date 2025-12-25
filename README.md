@@ -4,7 +4,7 @@ Data workflow project for cleaning, transforming, and analyzing order data.
 
 ## Setup
 
-Install `uv` from https://docs.astral.sh/uv/. Python 3.12 is required (see `.python-version`).
+Install `uv` from https://docs.astral.sh/uv/.
 
 From the project root, install dependencies:
 
