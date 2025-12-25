@@ -1,10 +1,17 @@
 # Week-2 Project
 
-Data workflow project for cleaning, transforming, and analyzing order data.
+Data workflow project for cleaning, transforming, and analyzing orders data.
 
 ## Setup
 
-Install `uv` from https://docs.astral.sh/uv/.
+Clone the repository:
+
+```bash
+git clone https://github.com/Mohammed-Balkhair-hub/Week-2_Project.git
+cd Week-2_Project
+```
+
+Install `uv` from https://docs.astral.sh/uv/. Python 3.12 is required (see `.python-version`).
 
 From the project root, install dependencies:
 
