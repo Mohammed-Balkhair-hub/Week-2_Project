@@ -9,7 +9,6 @@ __pycache__/
 # Data 
 data/processed/
 data/cache/
-reports/figures/
 reports/missingness_orders.csv
 .python-version
 uv.lock
